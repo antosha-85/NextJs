@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 
 const PropertyCard = ({ property }) => {
-    console.log("🚀 ~ file: PropertyCard.jsx:13 ~ PropertyCard ~ property:", property);
     const getRateDisplay = () => {
         const { rates } = property;
         if (rates.monthly) {

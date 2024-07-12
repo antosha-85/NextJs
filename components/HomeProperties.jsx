@@ -7,10 +7,6 @@ const HomeProperties = () => {
     const recentProperties = properties
         .sort(() => Math.random() - Math.random())
         .slice(0, 3);
-    console.log(
-        "🚀 ~ file: HomeProperties.jsx:9 ~ HomeProperties ~ recentProperties:",
-        recentProperties
-    );
 
     return (
         <>
