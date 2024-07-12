@@ -14,7 +14,7 @@ const PropertyCard = ({ property }) => {
     const getRateDisplay = () => {
         const { rates } = property;
         if (rates.monthly) {
-            return `${rates.monthly.toLocaleString()}/mo`;
+            return `${rates.monthly.toLocaleString()}/mo1`;
         } else if (rates.weekly) {
             return `${rates.weekly.toLocaleString()}/wk`;
         } else if (rates.nightly) {
