@@ -10,11 +10,11 @@ import {
 } from "react-icons/fa";
 
 const PropertyCard = ({ property }) => {
-    console.log(property.beds);
+    console.log("🚀 ~ file: PropertyCard.jsx:13 ~ PropertyCard ~ property:", property);
     const getRateDisplay = () => {
         const { rates } = property;
         if (rates.monthly) {
-            return `${rates.monthly.toLocaleString()}/mo1`;
+            return `${rates.monthly.toLocaleString()}/mo`;
         } else if (rates.weekly) {
             return `${rates.weekly.toLocaleString()}/wk`;
         } else if (rates.nightly) {
