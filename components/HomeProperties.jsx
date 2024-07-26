@@ -1,10 +1,22 @@
 import React from "react";
-import properties from "@/properties.json";
 import PropertyCard from "./PropertyCard";
 import Link from "next/link";
 
-const HomeProperties = () => {
-    console.log(process.env.NEXT_PUBLIC_API_URL);
+async function fetchProperties() {
+    try {
+        const res = await fetch("http://localhost:3000/api/properties");
+        if (!res.ok) {
+            throw new Error("Failed to fetch properties");
+        }
+        return await res.json();
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+const HomeProperties = async () => {
+    const properties = await fetchProperties();
     const recentProperties = properties
         .sort(() => Math.random() - Math.random())
         .slice(0, 3);
