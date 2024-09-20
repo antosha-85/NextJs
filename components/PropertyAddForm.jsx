@@ -23,12 +23,12 @@ const PropertyAddForm = () => {
         },
         seller_info: {
             name: "4",
-            email: "5",
+            email: "test@test.com",
             phone: "6",
         },
         images: [],
     });
-    
+
     //this it to get rid of weird error tha I wasn't able to reproduce
     const [isMounted, setIsMounted] = React.useState(false);
 
@@ -92,7 +92,7 @@ const PropertyAddForm = () => {
 
     return (
         isMounted && (
-            <form>
+            <form action="/api/properties" method="POST" encType="multipart/form-data">
                 <h2 className="text-3xl text-center font-semibold mb-6">
                     Add Property
                 </h2>
@@ -545,7 +545,7 @@ const PropertyAddForm = () => {
                     <input
                         type="text"
                         id="seller_name"
-                        name="seller_info.name."
+                        name="seller_info.name"
                         className="border rounded w-full py-2 px-3"
                         placeholder="Name"
                         value={fields.seller_info.name}
@@ -603,6 +603,7 @@ const PropertyAddForm = () => {
                         accept="image/*"
                         multiple
                         onChange={handleImageChange}
+                        required
                     />
                 </div>
 
