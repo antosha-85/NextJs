@@ -13,6 +13,7 @@ const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
     const [providers, setProviders] = useState(null);
+    const image = session?.user?.image;
 
     const pathname = usePathname();
 
@@ -189,8 +190,10 @@ const Navbar = () => {
                                         </span>
                                         <Image
                                             className="h-8 w-8 rounded-full"
-                                            src={profileDefault}
+                                            src={image ?? profileDefault}
                                             alt=""
+                                            width={40}
+                                            height={40}
                                         />
                                     </button>
                                 </div>
